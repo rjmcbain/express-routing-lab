@@ -28,6 +28,14 @@ router.post('/', function(req, res) {
 	res.send(req.body);
 });
 
+router.put('/:id', function(req, res) {
+	candies[req.params.index-1] = req.body;
+});
+
+router.delete('/:id', function(req, res) {
+	candies[req.params.index-1] = null;
+});
+
 
 
 module.exports = router;
