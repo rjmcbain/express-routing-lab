@@ -30,10 +30,12 @@ router.post('/', function(req, res) {
 
 router.put('/:id', function(req, res) {
 	candies[req.params.index-1] = req.body;
+	res.send(candies[req.params.index-1]);
 });
 
 router.delete('/:id', function(req, res) {
 	candies[req.params.index-1] = null;
+	res.send(candies[req.params.index-1]);
 });
 
 
