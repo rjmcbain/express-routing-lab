@@ -10,6 +10,10 @@ var port    = process.env.PORT || 3000;
 // How do we 'require' the candyRouter file?
 var candyRouter = require ('./candyRouter')
 
+app.get('/', function(req,res){
+	res.send('hello world');
+});
+
 app.use(bodyParser.json());
 app.use("/candies", candyRouter);
 

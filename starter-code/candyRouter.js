@@ -24,18 +24,22 @@ router.get('/:id', function(req, res) {
 });
 
 router.post('/', function(req, res) {
+	console.log(req.body);
 	candies.push(req.body);
 	res.send(req.body);
+
 });
 
 router.put('/:id', function(req, res) {
-	candies[req.params.index-1] = req.body;
-	res.send(candies[req.params.index-1]);
+	console.log(req.params.id);
+	candies[req.params.id-1] = req.body;
+	res.send(candies[req.params.id-1]);
 });
 
 router.delete('/:id', function(req, res) {
-	candies[req.params.index-1] = null;
-	res.send(candies[req.params.index-1]);
+	console.log(req.params.id);
+	candies[req.params.id-1] = null;
+	res.send(candies[req.params.id-1]);
 });
 
 
